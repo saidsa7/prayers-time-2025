@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exer</title>
+    <style>
+      /* #x {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      } */
+      h2 {
+        margin: 0px;
+      }
+      .parent {
+        background-color: brown;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 100px);
+        gap: 10px;
+
+        grid-template-areas:
+          "head head head"
+          "navbar main side"
+          "navbar main side"
+          "foot foot foot";
+      }
+      .parent h2 {
+        background: gold;
+      }
+      .header {
+        grid-area: head;
+      }
+      .footer {
+        grid-area: foot;
+      }
+      .nav {
+        grid-area: navbar;
+      }
+      .main {
+        grid-area: main;
+      }
+      .sidebar {
+        grid-area: side;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <h2 class="header">Header</h2>
+      <h2 class="nav">Nav</h2>
+      <h2 class="main">Main</h2>
+      <h2 class="sidebar">Sidebar</h2>
+      <h2 class="footer">Footer</h2>
+    </div>
+
+    <!-- <label for="cities">Choose a city:</label>
+    <select id="cities">
+      <option value="" disabled selected>Choose a city</option>
+      <option value="Casablanca" class="city-option">Casablanca</option>
+      <option value="Agadir" class="city-option">Agadir</option>
+      <option value="Tangier" class="city-option">Tangier</option>
+      <option value="Marrakech" class="city-option">Marrakech</option>
+    </select> -->
+
+    <!-- <label for="cities">اختر مدينة:</label>
+    <input list="cityList" id="cities" name="city" />
+    <datalist id="cityList">
+      <option value="برلين"></option>
+      <option value="هامبورغ"></option>
+      <option value="ميونخ"></option>
+      <option value="فرانكفورت"></option>
+      <option value="كولونيا"></option>
+    </datalist> -->
+
+    <!-- <div
+      id="x"
+      style="height: 400px; width: 600px; background-color: aquamarine"
+    >
+      <form action="">
+        <label for="">Name</label>
+        <input type="text" />
+        <label for="">Age</label>
+        <input type="text" />
+      </form>
+      <h3>aaa</h3>
+      <h3>bbb</h3>
+    </div> -->
+  </body>
+
+  <script>
+    // const citySelect = document.getElementById("cities");
+
+    // إضافة مستمع حدث (event listener) عند تغيير القيمة
+    // citySelect.addEventListener("change", function () {
+    //   // الحصول على القيمة المختارة
+    //   const selectedCity = citySelect.value;
+
+    //   // طباعة اسم المدينة في الـ Console
+    //   console.log("Chosen city:", selectedCity);
+    // });
+  </script>
+</html>

@@ -4,25 +4,135 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prayers-time</title>
-    <!-- import Bootstrap -->
+    <!-- import Bootstrap  + axios-->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
       href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <!-- import Bootstrap -->
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <!--// import Bootstrap + axios//-->
+    <style>
+      body {
+        background: linear-gradient(90deg, black, rgb(7, 7, 64));
+      }
+      .header h1 {
+        font-size: 80px;
+        font-weight: 400;
+        color: rgb(186, 181, 193);
+      }
+      .header h4 {
+        font-size: 30px;
+        font-weight: 400;
+        color: rgb(193, 172, 144);
+      }
+      .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 أعمدة متساوية */
+        grid-template-rows: repeat(2, 1fr);
+        gap: 35px; /* المسافة بين العناصر */
+      }
+      .prayer hr {
+        width: 50%;
+        margin: auto;
+      }
+      .prayer h4 {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        height: 50px;
+        background-color: rgb(154, 157, 63);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .prayer {
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        color: rgb(62, 73, 114);
+        background: linear-gradient(
+          90deg,
+          rgb(192, 192, 143),
+          rgb(173, 173, 121)
+        );
+      }
+      .footer {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: rgb(193, 172, 144);
+      }
+      #cities {
+        width: 170px;
+        height: 33px;
+        margin-left: 15px;
+        border-radius: 10px;
+        background: rgb(216, 213, 220);
+        color: rgba(83, 63, 34, 0.596);
+        border: none;
+        font-weight: 600;
+      }
+      option {
+        font-weight: 600;
+      }
+    </style>
   </head>
   <body>
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
+    <!-- the UI will maked with 3 ways ( bootstrap) : css grid system ( index) and grid system (secondUi.html) and cards(thirdUi) -->
+    <div class="full-project" style="margin-top: 200px">
+      <div class="container header mt-5">
+        <h1 id="city-name">Casablanca</h1>
+        <h4>
+          <span id="day-name"> today's name</span>
+          <span id="date"></span>
+        </h4>
+        <hr />
+      </div>
 
-    <button type="button" class="btn btn-link">Link</button>
+      <div class="container content mt-5">
+        <div class="prayer text-center">
+          <h3>Al-Fajr</h3>
+          <hr />
+          <h4 id="fajr-time">05 : 00 AM</h4>
+        </div>
+        <div class="prayer text-center">
+          <h3>Al-Chourouk</h3>
+          <hr />
+          <h4 id="chourouk-time">05 : 00 AM</h4>
+        </div>
+        <div class="prayer text-center">
+          <h3>Al-Duhr</h3>
+          <hr />
+          <h4 id="duhr-time">05 : 00 AM</h4>
+        </div>
+        <div class="prayer text-center">
+          <h3>Al-Asr</h3>
+          <hr />
+          <h4 id="asr-time">05 : 00 AM</h4>
+        </div>
+        <div class="prayer text-center">
+          <h3>Al-Maghreb</h3>
+          <hr />
+          <h4 id="maghreb-time">05 : 00 AM</h4>
+        </div>
+        <div class="prayer text-center">
+          <h3>Al-Ishaa</h3>
+          <hr />
+          <h4 id="ishaa-time">05 : 00 AM</h4>
+        </div>
+      </div>
+      <div class="footer">
+        <label for="cities">Choose a city :</label>
+        <select id="cities">
+          <option value="Casablanca">Casablanca</option>
+          <option value="Agadir">Agadir</option>
+          <option value="Tangier">Tangier</option>
+          <option value="Cairo">cairo</option>
+        </select>
+      </div>
+    </div>
+    <script src="./logic.js"></script>
   </body>
 
   <script></script>
